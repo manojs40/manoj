@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Facebook_cucumber
+Bundle-SymbolicName: Facebook_cucumber
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-23
+Automatic-Module-Name: Facebook.cucumber
+Export-Package: pages,
+ runners,
+ stepdefinitions
