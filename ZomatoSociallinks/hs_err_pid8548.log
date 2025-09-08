@@ -1,0 +1,243 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3707), pid=8548, tid=12064
+#
+# JRE version:  (23.0.2+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (23.0.2+7, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 53064 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames testRunner.TestRunner
+
+Host: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+Time: Thu Aug 21 16:25:33 2025 India Standard Time elapsed time: 0.055309 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002ab59db9580):  JavaThread "Unknown thread" [_thread_in_vm, id=12064, stack(0x000000bffd000000,0x000000bffd100000) (1024K)]
+
+Stack: [0x000000bffd000000,0x000000bffd100000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e8fa9]  (no source info available)
+V  [jvm.dll+0x8d96b3]  (no source info available)
+V  [jvm.dll+0x8dbb3e]  (no source info available)
+V  [jvm.dll+0x8dc213]  (no source info available)
+V  [jvm.dll+0x281bc6]  (no source info available)
+V  [jvm.dll+0x6e5885]  (no source info available)
+V  [jvm.dll+0x6d980a]  (no source info available)
+V  [jvm.dll+0x36271a]  (no source info available)
+V  [jvm.dll+0x36ab46]  (no source info available)
+V  [jvm.dll+0x3570ee]  (no source info available)
+V  [jvm.dll+0x357388]  (no source info available)
+V  [jvm.dll+0x32fd1c]  (no source info available)
+V  [jvm.dll+0x3309be]  (no source info available)
+V  [jvm.dll+0x89fde5]  (no source info available)
+V  [jvm.dll+0x3c0058]  (no source info available)
+V  [jvm.dll+0x88881c]  (no source info available)
+V  [jvm.dll+0x45a36e]  (no source info available)
+V  [jvm.dll+0x45c181]  (no source info available)
+C  [jli.dll+0x5278]  (no source info available)
+C  [ucrtbase.dll+0x21bb2]  (no source info available)
+C  [KERNEL32.DLL+0x17374]  (no source info available)
+C  [ntdll.dll+0x4cc91]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fffaa219ad8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000002ab5c119860 WorkerThread "GC Thread#0"                     [id=2380, stack(0x000000bffd100000,0x000000bffd200000) (1024K)]
+  0x000002ab5c12e3b0 ConcurrentGCThread "G1 Main Marker"            [id=1660, stack(0x000000bffd200000,0x000000bffd300000) (1024K)]
+  0x000002ab5c12edd0 WorkerThread "G1 Conc#0"                       [id=19860, stack(0x000000bffd300000,0x000000bffd400000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffa98f338a]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fffaa29cde8] Heap_lock - owner thread: 0x000002ab59db9580
+
+Heap address: 0x0000000081a00000, size: 2022 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 10 size 36 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total reserved 2070528K, committed 0K, used 0K [0x0000000081a00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffa9cf5529]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.027 Loaded shared library C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff62c650000 - 0x00007ff62c65e000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\javaw.exe
+0x00007ff80b9d0000 - 0x00007ff80bbc8000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff80b820000 - 0x00007ff80b8e2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff809630000 - 0x00007ff80992e000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff809070000 - 0x00007ff809170000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffc9690000 - 0x00007fffc96a7000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\jli.dll
+0x00007fffca590000 - 0x00007fffca5ae000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\VCRUNTIME140.dll
+0x00007ff80af20000 - 0x00007ff80b0bd000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff809600000 - 0x00007ff809622000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffff1090000 - 0x00007ffff132a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16\COMCTL32.dll
+0x00007ff8099f0000 - 0x00007ff809a1b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8094e0000 - 0x00007ff8095f7000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff809340000 - 0x00007ff8093dd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff80b8f0000 - 0x00007ff80b98e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff80ad90000 - 0x00007ff80adbf000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000005b0e0000 - 0x000000005b0ec000 	C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
+0x00007ff809c00000 - 0x00007ff809cb1000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff80a4f0000 - 0x00007ff80a58f000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff80ab50000 - 0x00007ff80ac73000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff809930000 - 0x00007ff809957000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fffcc400000 - 0x00007fffcc4ac000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
+0x00007ff809cc0000 - 0x00007ff80a42d000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff809b10000 - 0x00007ff809b65000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ff808bd0000 - 0x00007ff808bda000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffe63b0000 - 0x00007fffe63bc000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\vcruntime140_1.dll
+0x00007fffc29f0000 - 0x00007fffc2a7d000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\msvcp140.dll
+0x00007fffa95b0000 - 0x00007fffaa37e000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\server\jvm.dll
+0x00007ff80adc0000 - 0x00007ff80ae2b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffff21d0000 - 0x00007ffff21f7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff808590000 - 0x00007ff8085db000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff808400000 - 0x00007ff808412000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff806e80000 - 0x00007ff806e92000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff805620000 - 0x00007ff80562a000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\jimage.dll
+0x00007ffffc0b0000 - 0x00007ffffc294000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fffee1e0000 - 0x00007fffee214000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff809960000 - 0x00007ff8099e2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff801640000 - 0x00007ff80165e000 	C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\java.dll
+0x00007ff80aa20000 - 0x00007ff80ab4b000 	C:\WINDOWS\System32\ole32.dll
+0x00007ff80b190000 - 0x00007ff80b4e3000 	C:\WINDOWS\System32\combase.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16;C:\Program Files (x86)\360\Total Security\safemon;C:\Users\GOVINDA COMP YEOLA\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604\jre\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 53064 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames testRunner.TestRunner
+java_class_path (initial): C:\Users\GOVINDA COMP YEOLA\OneDrive\Desktop\project\ZomatoSociallinks\target\test-classes;C:\Users\GOVINDA COMP YEOLA\OneDrive\Desktop\project\ZomatoSociallinks\target\classes;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-java\7.16.1\cucumber-java-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-core\7.16.1\cucumber-core-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-gherkin\7.16.1\cucumber-gherkin-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.16.1\cucumber-gherkin-messages-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\datatable\7.16.1\datatable-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-plugin\7.16.1\cucumber-plugin-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\docstring\7.16.1\docstring-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\html-formatter\21.3.0\html-formatter-21.3.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\junit-xml-formatter\0.3.0\junit-xml-formatter-0.3.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\cucumber\cucumber-junit\7.16.1\cucumber-junit-7.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\GOVINDA COMP YEOLA\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\GOVINDA COMP YEOLA\OneDrive\Desktop\project\eclipse\configuration\org.eclipse.osgi\250\0\.cp;C:\Users\GOVINDA COMP YEOLA\OneDrive\Desktop\project\eclipse\configuration\org.eclipse.osgi\249\0\.cp
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 2120220672                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832704                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122945536                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122880000                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2120220672                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Users\GOVINDA COMP YEOLA\Downloads\jdk-23_windows-x64_bin.zip\jdk-23.0.1
+PATH=C:/Users/GOVINDA COMP YEOLA/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin/server;C:/Users/GOVINDA COMP YEOLA/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.2.v20250131-0604/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\GOVINDA COMP YEOLA\Downloads\jdk-23_windows-x64_bin.zip\jdk-23.0.1\bin;C:\Program Files\nodejs\;C:\Users\GOVINDA COMP YEOLA\Downloads\allure-2.34.0\allure-2.34.0\bin;C:\Users\GOVINDA COMP YEOLA\Downloads\jdk-23_windows-x64_bin (1)\jdk-23.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\GOVINDA COMP YEOLA\AppData\Local\Microsoft\WindowsApps;C:\Users\GOVINDA COMP YEOLA\AppData\Local\GitHubDesktop\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\GOVINDA COMP YEOLA\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1\bin;;C:\Users\GOVINDA COMP YEOLA\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\GOVINDA COMP YEOLA\OneDrive\Desktop;
+USERNAME=GOVINDA COMP YEOLA
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+TMP=C:\Users\GOVIND~1\AppData\Local\Temp
+TEMP=C:\Users\GOVIND~1\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+OS uptime: 1 days 4:44 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3 microcode 0xf0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, rdtscp, f16c
+Processor Information for the first 4 processors :
+  Max Mhz: 2400, Current Mhz: 2300, Mhz Limit: 2280
+
+Memory: 4k page, system-wide physical 8086M (332M free)
+TotalPageFile size 18086M (AvailPageFile size 13M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 52M, peak: 180M
+
+vm_info: OpenJDK 64-Bit Server VM (23.0.2+7) for windows-amd64 JRE (23.0.2+7), built on 2025-01-21T00:00:00Z with MS VC++ 17.7 (VS2022)
+
+END.
